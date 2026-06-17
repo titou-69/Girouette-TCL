@@ -1,22 +1,82 @@
-const lineInput = document.getElementById("lineInput");
-const destinationInput = document.getElementById("destinationInput");
+const codes = {
 
-const lineNumber = document.getElementById("lineNumber");
-const destination = document.getElementById("destination");
+    "0101": {
+        ligne: "C1",
+        destination: "GARE PART-DIEU V. MERLE"
+    },
 
-document.getElementById("updateBtn").addEventListener("click", () => {
-    lineNumber.textContent = lineInput.value;
-    destination.textContent = destinationInput.value;
-});
+    "0102": {
+        ligne: "C1",
+        destination: "GARE PART-DIEU V. MERLE • Ligne Déviée"
+    },
 
-document.getElementById("fullscreenBtn").addEventListener("click", () => {
-    document.documentElement.requestFullscreen();
-});
+    "0103": {
+        ligne: "C1",
+        destination: "CUIRE Métro C"
+    },
 
-lineInput.addEventListener("input", updateDisplay);
-destinationInput.addEventListener("input", updateDisplay);
+    "0104": {
+        ligne: "C1",
+        destination: "CUIRE Métro C • Ligne Déviée"
+    },
 
-function updateDisplay() {
-    lineNumber.textContent = lineInput.value;
-    destination.textContent = destinationInput.value;
+    "1302": {
+        ligne: "C13",
+        destination: "GRANGE BLANCHE"
+    }
+
+};
+
+function valider(){
+
+    const code =
+        document.getElementById("codeInput")
+        .value.trim();
+
+    const fiche = codes[code];
+
+    if(!fiche){
+
+        alert("Code inconnu");
+        return;
+    }
+
+    document.getElementById("ligne")
+        .textContent = fiche.ligne;
+
+    document.getElementById("destination")
+        .textContent = fiche.destination;
+
+    document.getElementById("infoLigne")
+        .textContent = fiche.ligne;
+
+    document.getElementById("infoDest")
+        .textContent = fiche.destination;
 }
+
+function effacer(){
+
+    document.getElementById("codeInput")
+        .value = "";
+
+    document.getElementById("ligne")
+        .textContent = "---";
+
+    document.getElementById("destination")
+        .textContent = "EN ATTENTE";
+
+    document.getElementById("infoLigne")
+        .textContent = "---";
+
+    document.getElementById("infoDest")
+        .textContent = "---";
+}
+
+document
+.getElementById("codeInput")
+.addEventListener("keydown", e => {
+
+    if(e.key === "Enter"){
+        valider();
+    }
+});
