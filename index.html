@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Girouettes Bus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="panel">
+    <h1>Gestion de Girouettes</h1>
+
+    <label>Ligne</label>
+    <input type="text" id="lineInput" value="C3">
+
+    <label>Destination</label>
+    <input type="text" id="destinationInput" value="Gare Part-Dieu">
+
+    <button id="updateBtn">Mettre à jour</button>
+    <button id="fullscreenBtn">Plein écran</button>
+</div>
+
+<div class="display" id="display">
+    <div class="line-number" id="lineNumber">C3</div>
+    <div class="destination" id="destination">Gare Part-Dieu</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
