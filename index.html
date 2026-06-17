@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Girouettes Bus</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pupitre Girouettes</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="panel">
-    <h1>Gestion de Girouettes</h1>
+<div class="layout">
 
-    <label>Ligne</label>
-    <input type="text" id="lineInput" value="C3">
+    <div class="console">
 
-    <label>Destination</label>
-    <input type="text" id="destinationInput" value="Gare Part-Dieu">
+        <h2>SAEIV</h2>
 
-    <button id="updateBtn">Mettre à jour</button>
-    <button id="fullscreenBtn">Plein écran</button>
-</div>
+        <label>Code girouette</label>
 
-<div class="display" id="display">
-    <div class="line-number" id="lineNumber">C3</div>
-    <div class="destination" id="destination">Gare Part-Dieu</div>
+        <input
+            type="number"
+            id="codeInput"
+            placeholder="1201"
+            autofocus
+        >
+
+        <div class="infos">
+            <p>Ligne : <span id="infoLigne">---</span></p>
+            <p>Destination : <span id="infoDest">---</span></p>
+        </div>
+
+        <button onclick="valider()">
+            VALIDER
+        </button>
+
+        <button onclick="effacer()">
+            EFFACER
+        </button>
+
+    </div>
+
+    <div class="girouette">
+
+        <div class="ligne" id="ligne">
+            ---
+        </div>
+
+        <div class="destination" id="destination">
+            EN ATTENTE
+        </div>
+
+    </div>
+
 </div>
 
 <script src="script.js"></script>
