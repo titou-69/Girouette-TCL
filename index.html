@@ -1,58 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pupitre Girouettes</title>
+
+<title>Pupitre Girouettes Bus</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
+
 
 <div class="layout">
 
+
+    <!-- PUPITRE CONDUCTEUR -->
+
     <div class="console">
 
-        <h2>SAEIV</h2>
 
-        <label>Code girouette</label>
+        <div class="terminal">
 
-        <input
-            type="number"
+
+            <div class="topbar">
+
+                <span>SAEIV</span>
+                <span>GIROUETTE</span>
+
+            </div>
+
+
+
+            <div class="lcd">
+
+
+                <div>
+                    CODE :
+                    <span id="codeAffiche">
+                        ----
+                    </span>
+                </div>
+
+
+                <hr>
+
+
+                <div>
+
+                    <span id="infoLigne">
+                        ---
+                    </span>
+
+                    -
+
+                    <span id="infoDest">
+                        ATTENTE
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <input
             id="codeInput"
-            placeholder="1201"
-            autofocus
-        >
+            maxlength="4"
+            placeholder="CODE GIR"
+            >
 
-        <div class="infos">
-            <p>Ligne : <span id="infoLigne">---</span></p>
-            <p>Destination : <span id="infoDest">---</span></p>
+
+
+
+            <div class="keyboard">
+
+
+                <button onclick="touche('1')">1</button>
+                <button onclick="touche('2')">2</button>
+                <button onclick="touche('3')">3</button>
+
+
+                <button onclick="touche('4')">4</button>
+                <button onclick="touche('5')">5</button>
+                <button onclick="touche('6')">6</button>
+
+
+                <button onclick="touche('7')">7</button>
+                <button onclick="touche('8')">8</button>
+                <button onclick="touche('9')">9</button>
+
+
+                <button class="yellow"
+                onclick="effacer()">
+                    C
+                </button>
+
+
+                <button onclick="touche('0')">
+                    0
+                </button>
+
+
+                <button class="green"
+                onclick="valider()">
+                    OK
+                </button>
+
+
+            </div>
+
+
         </div>
 
-        <button onclick="valider()">
-            VALIDER
-        </button>
-
-        <button onclick="effacer()">
-            EFFACER
-        </button>
 
     </div>
 
-    <div class="girouette">
 
-        <div class="ligne" id="ligne">
-            ---
+
+
+
+
+    <!-- AFFICHAGE GIROUETTE -->
+
+
+    <div class="preview">
+
+
+        <div class="girouette">
+
+
+            <div class="ligne"
+            id="ligne">
+
+                ---
+
+            </div>
+
+
+
+            <div class="destination"
+            id="destination">
+
+                EN ATTENTE
+
+            </div>
+
+
+
         </div>
 
-        <div class="destination" id="destination">
-            EN ATTENTE
-        </div>
 
     </div>
+
+
 
 </div>
 
+
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
