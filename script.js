@@ -20,11 +20,14 @@ const codes = {
         destination: "CUIRE Métro C • Ligne Déviée"
     },
 
-    "1302": {
-        ligne: "C13",
-        destination: "GRANGE BLANCHE"
-    }
-
+    "0105": {
+        ligne: "C1",
+        destination: "BROTTEAUX Métro B • Service Partiel"
+    },
+    
+    "0106": {
+        ligne : "C1",
+        destination: "CITE INTERNATIONALE CTRE CONGRES • Service Partiel
 };
 
 function valider(){
