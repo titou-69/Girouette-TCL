@@ -27,7 +27,7 @@ const codes = {
     
     "0106": {
         ligne : "C1",
-        destination: "CITE INTERNATIONALE CTRE CONGRES • Service Partiel
+        destination: "CITE INTERNATIONALE CTRE CONGRES • Service Partiel"
 };
 
 function valider(){
