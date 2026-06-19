@@ -1,85 +1,174 @@
 const codes = {
 
-    "0101": {
-        ligne: "C1",
-        destination: "GARE PART-DIEU V. MERLE"
+
+    "1201":{
+
+        ligne:"C3",
+
+        destination:"GARE PART-DIEU"
+
     },
 
-    "0102": {
-        ligne: "C1",
-        destination: "GARE PART-DIEU V. MERLE • Ligne Déviée"
+
+    "1202":{
+
+        ligne:"C3",
+
+        destination:"SAINT-PAUL"
+
     },
 
-    "0103": {
-        ligne: "C1",
-        destination: "CUIRE Métro C"
+
+    "1203":{
+
+        ligne:"C3",
+
+        destination:"LA GRAPPINIERE"
+
     },
 
-    "0104": {
-        ligne: "C1",
-        destination: "CUIRE Métro C • Ligne Déviée"
+
+    "1301":{
+
+        ligne:"C13",
+
+        destination:"HOTEL DE VILLE"
+
     },
 
-    "0105": {
-        ligne: "C1",
-        destination: "BROTTEAUX Métro B • Service Partiel"
+
+    "1302":{
+
+        ligne:"C13",
+
+        destination:"GRANGE BLANCHE"
+
     },
-    
-    "0106": {
-        ligne : "C1",
-        destination: "CITE INTERNATIONALE CTRE CONGRES • Service Partiel"
+
+
+    "2501":{
+
+        ligne:"C25",
+
+        destination:"FRANCHEVILLE"
+
+    }
+
+
 };
+
+
+
+
+
+function touche(chiffre){
+
+
+    let input =
+    document.getElementById("codeInput");
+
+
+    input.value += chiffre;
+
+
+    document.getElementById("codeAffiche")
+    .textContent=input.value;
+
+
+}
+
+
+
+
+
 
 function valider(){
 
-    const code =
-        document.getElementById("codeInput")
-        .value.trim();
 
-    const fiche = codes[code];
+    let code =
 
-    if(!fiche){
+    document.getElementById("codeInput")
+    .value;
 
-        alert("Code inconnu");
+
+
+
+    let data = codes[code];
+
+
+
+    if(!data){
+
+
+        alert("Code girouette inconnu");
+
         return;
+
     }
 
+
+
+
     document.getElementById("ligne")
-        .textContent = fiche.ligne;
+    .textContent=data.ligne;
+
+
 
     document.getElementById("destination")
-        .textContent = fiche.destination;
+    .textContent=data.destination;
+
+
+
 
     document.getElementById("infoLigne")
-        .textContent = fiche.ligne;
+    .textContent=data.ligne;
+
+
 
     document.getElementById("infoDest")
-        .textContent = fiche.destination;
+    .textContent=data.destination;
+
+
+
 }
+
+
+
+
+
+
 
 function effacer(){
 
+
     document.getElementById("codeInput")
-        .value = "";
+    .value="";
 
-    document.getElementById("ligne")
-        .textContent = "---";
 
-    document.getElementById("destination")
-        .textContent = "EN ATTENTE";
 
-    document.getElementById("infoLigne")
-        .textContent = "---";
+    document.getElementById("codeAffiche")
+    .textContent="----";
 
-    document.getElementById("infoDest")
-        .textContent = "---";
+
 }
 
-document
-.getElementById("codeInput")
-.addEventListener("keydown", e => {
 
-    if(e.key === "Enter"){
+
+
+
+
+document
+
+.getElementById("codeInput")
+
+.addEventListener("keydown",function(e){
+
+
+    if(e.key==="Enter"){
+
         valider();
+
     }
+
+
 });
